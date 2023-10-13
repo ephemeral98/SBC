@@ -1,0 +1,8 @@
+.logout-wrap {
+  position: absolute;
+  right: 10%;
+  top: 5%;
+  padding: 5px 10px;
+  background-color: gray;
+  cursor: pointer;
+}

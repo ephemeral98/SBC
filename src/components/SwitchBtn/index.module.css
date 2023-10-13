@@ -1,0 +1,20 @@
+.switch-btn-wrap {
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgb(104, 104, 104);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.left {
+  left: 10%;
+}
+
+.right {
+  right: 10%;
+}
