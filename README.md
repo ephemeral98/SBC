@@ -1,5 +1,23 @@
 # React + Vite
 
+## 运行
+
+使用 npm
+```
+npm i
+
+npm run dev
+```
+
+使用 yarn
+
+```
+yarn 
+
+
+yarn dev
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

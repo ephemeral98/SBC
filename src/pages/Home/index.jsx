@@ -11,6 +11,9 @@ export default () => {
   const [isBack, setIsBack] = useState(false);
   const [backEnd, setBackEnd] = useState(false);
 
+  /**
+   * 卡牌翻面
+   */
   const turnAround = () => {
     setIsBack(!isBack);
   };
@@ -23,6 +26,7 @@ export default () => {
     setIsBack(true);
   };
 
+  // 卡牌
   const [cardList, setCardList] = useState([
     {
       id: 1,
@@ -48,6 +52,9 @@ export default () => {
 
   const showingCardInx = useMemo(() => cardList.findIndex((item) => item.isShow), [cardList]);
 
+  /**
+   * 输入
+   */
   const doInp = (e) => {
     const newList = cardList.map((item) => {
       if (item.id === showingCard.id) {
@@ -59,6 +66,9 @@ export default () => {
     setCardList(newList);
   };
 
+  /**
+   * 切换卡牌
+   */
   const doSwitch = (dir) => {
     let newList = cardList;
     if (dir === 'left') {
@@ -105,7 +115,9 @@ export default () => {
   return (
     <div className={css['home-wrap']}>
       <Logout />
+
       <header>Login: {user.name}</header>
+
       {!!cardList.length && (
         <SwitchBtn onLeft={() => doSwitch('left')} onRight={() => doSwitch('right')} />
       )}
@@ -117,11 +129,7 @@ export default () => {
           <div onClick={() => turnAround()} className={css['home-container-bg']}></div>
 
           {/* 正面 */}
-          <div
-            className={`${css['flex-center']} ${css['number']} ${
-              !backEnd && css['is-top']
-            }`}
-          >
+          <div className={`${css['flex-center']} ${css['number']} ${!backEnd && css['is-top']}`}>
             {showingCard.num}
           </div>
 
